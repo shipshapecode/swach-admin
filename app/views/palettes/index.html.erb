@@ -1,0 +1,11 @@
+<h1>Palettes</h1>
+
+<ul>
+  <% @palettes.each do |palette| %>
+    <li>
+      <%= link_to palette.name, palette %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Palette", new_palette_path %>

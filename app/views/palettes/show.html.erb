@@ -1,0 +1,18 @@
+<h1><%= @palette.name %></h1>
+
+<p><%= @palette.is_favorite %></p>
+
+<%= link_to "Edit", edit_palette_path(@palette) %>
+
+<%= link_to "Delete", palette_path(@palette), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+
+<h2>Colors</h2>
+<% @palette.colors.each do |color| %>
+  <p>
+    <%= color.name %>
+  </p>
+<% end %>                  

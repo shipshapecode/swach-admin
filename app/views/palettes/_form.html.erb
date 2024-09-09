@@ -1,0 +1,22 @@
+<%= form_with model: @palette do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @palette.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :is_favorite %><br>
+    <%= form.collection_radio_buttons :is_favorite, [[true, 'Yes'], [false, 'No']], :first, :last %>
+    
+    <% @palette.errors.full_messages_for(:is_favorite).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
